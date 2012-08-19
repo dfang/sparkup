@@ -1,3 +1,45 @@
+[Sparkup](https://github.com/rstacruz/sparkup) was writen by rstacruz , i just forked here to make it easier install with [vundle](https://github.com/gmarik/vundle) in vim and modified default g:sparkupExecuteMapping to &lt;ctrl-y>,                                                      
+ 
+i like sparkup than zencoding.vim because of placefolder . for example , html>head>title<body, then press <c-y>, will expands to <html><head><title>{placeholder1}</title></head><body><placeholder2></body></html> , the cursor will be placed in the 
+{placeholder1} , then you can use <c-n> to jump to {placeholder2} , that's cool ! here's a [blog](http://bachman.pl/devel/improving-html-coding-using-zencoding-and-sparkup) about this .
+
+说明：
+sparkup貌似比zencoding好用，一样的语法，但多个占位符的功能，使得输入html更加方便了。
+我这里只是做了一点修改，把filetype plugin copy到sparkup根目录了，这样filetype plugin就在可以通过vundle加载到vim 的runtime中，也就是可以使用了。原来的通过vundle安装只是将其下载下来了，要使用还得去cp -R 一下,现在可以之直接通过vundle安装了
+省去了cp -R 的过程，另一个修改就是把默认的展开键ctrl+e换成ctrl+y然后按,（直接修改的sparkup.vim文件）
+
+
+
+-----original vim/readme.txt -----------------------------------------
+
+Installation
+------------
+
+   Copy the contents of vim/ftplugin/ to your ~/.vim/ftplugin directory.
+
+       (Assuming your current dir is sparkup/vim/)
+       $ cp -R ftplugin ~/.vim/
+
+Configuration
+-------------
+
+  g:sparkup (Default: 'sparkup') -
+    Location of the sparkup executable. You shouldn't need to change this
+    setting if you used the install option above.
+
+  g:sparkupArgs (Default: '--no-last-newline') -
+    Additional args passed to sparkup.
+
+  g:sparkupExecuteMapping (Default: '<c-e>') -
+    Mapping used to execute sparkup.
+
+  g:sparkupNextMapping (Default: '<c-n>') -
+    Mapping used to jump to the next empty tag/attribute.
+
+
+----------------------------------------------------------------------------------------------------------------------
+--------original readme.md--------------------------------------------------------------------------
+
 Sparkup
 =======
 
